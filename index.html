@@ -24,8 +24,8 @@
   }
 
   .logo img {
-    width: 180px;
-    height: 180px;
+    width: 150px;
+    height: 150px;
     border-radius: 50%;
     box-shadow: 0 0 40px #ff004c;
     border: 2px solid #111;
@@ -50,16 +50,17 @@
   }
 
   .generate-box {
-    border: 1px solid #00ffff55;
+    border: 2px solid #006400;
     padding: 10px;
     margin: 10px auto;
     width: 80%;
     max-width: 320px;
     border-radius: 10px;
-    font-size: 16px;
+    font-size: 17px;
     color: #ccc;
     transition: 0.3s;
-    min-height: 40px;
+    min-height: 45px;
+    animation: pulse 4s infinite alternate;
   }
 
   .btn {
@@ -121,9 +122,9 @@
   </div>
 
   <h1>RABIT MOD</h1>
-  <h2>V2-AIMKILL</h2>
+  <h2>V1-AIMKILL</h2>
 
-  <div class="generate-box" id="generateBox">– Press Generate –</div>
+  <div class="generate-box" id="generateBox">–Rabit Mod Press Generate Key–</div>
   <button class="btn" onclick="generateKey()">GENERATE KEY</button>
   <button class="btn" onclick="copyKey()">COPY KEY</button>
 
@@ -135,8 +136,8 @@
 
 <script>
   function generateKey() {
-    const chars = "ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";
-    let key = "";
+    const chars = "ABCDEFGHIJKLMNOPQRSTVXYZ123456789";
+    let key = "RABITMOD-";
     for (let i = 0; i < 16; i++) {
       key += chars.charAt(Math.floor(Math.random() * chars.length));
       if ((i + 1) % 4 === 0 && i < 15) key += "-";
@@ -148,7 +149,7 @@
     const keyText = document.getElementById("generateBox").innerText.replace("🔑", "").trim();
     if (keyText && keyText !== "– Press Generate –") {
       navigator.clipboard.writeText(keyText);
-      alert("✅ Key copied: " + keyText);
+      alert("✅ Congratulations Key copied Successful : " + keyText);
     } else {
       alert("⚠️ Please generate a key first!");
     }
